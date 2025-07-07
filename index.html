@@ -9,7 +9,12 @@
         background-color: #111;
     color: #fff;
   }
-    
+        video {
+      width: 100vw;
+      height: 56.25vw; /* 16:9 aspect ratio = 9/16 = 0.5625 */
+      max-height: 100vh;
+      object-fit: cover;
+    }
   
 
   h1, h2, h3 {
@@ -19,6 +24,9 @@
 <body>
 
 <h1><center>Eclipse</center></h1>
+    <video autoplay muted loop playsinline>
+    <source src="videos/match-cut.mp4" type="video/mp4">
+    could you please update the browser? please? you really want to see the video -- right?
 <p>this is a test, more stuff to come out.</p>
 </body>
 </html>
