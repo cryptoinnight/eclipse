@@ -15,7 +15,20 @@
       max-height: 100vh;
       object-fit: cover;
     }
-  
+  .cool-btn {
+  background-color: #000; /* dark black */
+  color: #00aaff; /* nice blue text */
+  border: none;
+  border-radius: 999px; /* round af */
+  padding: 1em 2em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cool-btn:hover {
+  transform: scale(2); /* grow x2 on hover */
+}
 
   h1, h2, h3 {
     font-family: 'Unbounded', cursive;
@@ -25,6 +38,8 @@
 
 <h1><center>Eclipse</center></h1>
   <p><center><b>Learn even more <i>HTML</i> than before.</b></center></p>
-<p>this is a test, more stuff to come out.</p>
+<p>Learn one of these topics:</p>
+  <button class="cool-btn">The Basics</button>
+
 </body>
 </html>
