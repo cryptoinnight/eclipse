@@ -1,30 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Eclipse | Sign In</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eclipse | Sign In</title>
+  <!-- google sign-in script -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      gap: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    .g_id_signin {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>sign in</h1>
-<p>(construction but we have google)</p>
+  <h1>sign in</h1>
+  <p>(under construction, but you can use Google)</p>
 
   <div id="g_id_onload"
-     data-client_id="1"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-login_uri="https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https://developers.google.com/oauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/cloud-platform.read-only+https://www.googleapis.com/auth/cloud-platform+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&access_type=offline"
-     data-itp_support="true">
-</div>
+       data-client_id="1"
+       data-context="signin"
+       data-ux_mode="popup"
+       data-login_uri="https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https://developers.google.com/oauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/cloud-platform.read-only+https://www.googleapis.com/auth/cloud-platform+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&access_type=offline"
+       data-itp_support="true">
+  </div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="pill"
-     data-theme="filled_black"
-     data-text="signin"
-     data-size="large"
-     data-logo_alignment="left">
-</div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-shape="pill"
+       data-theme="filled_black"
+       data-text="signin_with"
+       data-size="large"
+       data-logo_alignment="left">
+  </div>
 
 </body>
 </html>
-
