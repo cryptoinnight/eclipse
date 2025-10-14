@@ -4,58 +4,236 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eclipse | Sign In</title>
-  <!-- google sign-in script -->
+
+  <!-- google sign-in -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background: #121212;
+      margin: 0;
+      background: #0d0d0f;
       color: #fff;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      gap: 20px;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0;
+    .login-container {
+      background: #141416;
+      padding: 50px 40px;
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+      width: 380px;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
     }
 
-    p {
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .login-container h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.3em;
+      letter-spacing: -0.5px;
+    }
+
+    .login-container p {
       color: #aaa;
+      margin-bottom: 35px;
+      font-size: 0.95rem;
+    }
+
+    .input-group {
+      margin-bottom: 22px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #ccc;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #2a2a2d;
+      border-radius: 10px;
+      background: #1d1d20;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #6366f1;
+      background: #1b1b1e;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
       font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .login-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      margin: 25px 0;
+      color: #666;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #2d2d30;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
     }
 
     .g_id_signin {
-      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .contact {
+      margin-top: 25px;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    .contact a {
+      color: #6366f1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .forgot {
+      display: block;
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+
+    .forgot a {
+      color: #818cf8;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>sign in</h1>
-  <p>(under construction, but you can use Google)</p>
+  <div class="login-container">
+    <h1>sign in</h1>
+    <p>welcome back to eclipse 👋</p>
 
-  <div id="g_id_onload"
-       data-client_id="1"
-       data-context="signin"
-       data-ux_mode="popup"
-       data-login_uri="https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https://developers.google.com/oauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/cloud-platform.read-only+https://www.googleapis.com/auth/cloud-platform+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&access_type=offline"
-       data-itp_support="true">
+    <div class="input-group">
+      <label for="email">email</label>
+      <input type="email" id="email" placeholder="your@email.com">
+    </div>
+
+    <div class="input-group">
+      <label for="password">password</label>
+      <input type="password" id="password" placeholder="••••••••">
+    </div>
+
+    <div class="forgot">
+      <a href="#">forgot password?</a>
+    </div>
+
+    <button class="login-btn" onclick="login()">sign in</button>
+
+    <div class="divider">or continue with</div>
+
+    <div id="g_id_onload"
+         data-client_id="1"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-login_uri="https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https://developers.google.com/oauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/cloud-platform.read-only+https://www.googleapis.com/auth/cloud-platform+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&access_type=offline"
+         data-itp_support="true">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="pill"
+         data-theme="filled_black"
+         data-text="signin_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+
+    <div class="note">(page under construction, expect bugs 😭)</div>
+
+    <div class="contact">
+      need help? <a href="mailto:eclipsereal@proton.me">eclipsereal@proton.me</a>
+    </div>
   </div>
 
-  <div class="g_id_signin"
-       data-type="standard"
-       data-shape="pill"
-       data-theme="filled_black"
-       data-text="signin_with"
-       data-size="large"
-       data-logo_alignment="left">
-  </div>
+  <script>
+    function login() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
 
+      if (!email || !password) {
+        alert("pls enter both email + password 😭");
+        return;
+      }
+
+      // fake login simulation
+      alert(`logging in as ${email}...`);
+    }
+  </script>
 </body>
 </html>
