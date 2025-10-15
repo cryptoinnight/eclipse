@@ -7,6 +7,6 @@ Eclipse takes security really seriously.
 # Any issues?
 Report it in Issues. I'll fix it soon enough.
 <br>
-If you have a cricital issue, email me at [mailto:eclipsereal@proton.me](eclipsereal@proton.me). I read it oftenly, making it faster.
+If you have a cricital issue, email me at [eclipsereal@proton.me](mailto:eclipsereal@proton.me). I read it oftenly, making it faster.
 <br>
 Thanks!
